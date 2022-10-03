@@ -16,29 +16,73 @@ const questions = async() => {
         {
           type: "input",
           name: "name",
-          message: "What is your Manager's name?" 
+          message: "What is your name?" 
         },
         {
           type: "input",
           name: "id",
-          message: "What is your Manager's ID?" 
+          message: "What is your ID?" 
         },
         {
           type: "input",
           name: "email",
-          message: "What is your Manager's email?" 
+          message: "What is your email?" 
         },
         {
-          type: "input",
-          name: "officeNumber",
-          message: "What is your Manager's office number?" 
-        },
-        {
-            type: "list"
+            type: "list",
             message: "What is your role?", 
             name: "role", 
             choices: ["Engineer", "Intern", "Manager"],
         }
     ])
+    if (answers.role === "Manager") {
+        const officeNumAnswer = await inquirer.prompt([
+            { 
+                type: "input",
+                message: "What is your office number",
+                name: "officeNumber",
+            },
+        ])
+        const newManager = new Manager (
+            answers.name,
+            answers.id,
+            answers.email,
+            officeNumAnswer.officeNumber
+        );
+        newTeamMembers.push(newManager);
+    
+    } else if (answers.role === "Engineer"){
+        const githubAnswer = await inquirer.prompt([
+          {
+            type: "input",
+            message: "What is your Github Username?",
+            name: "github",
+          }  
+        ])
+        const newEngineer = new Engineer(
+            answers.name,
+            answers.id,
+            answers.email,
+            githubAnswer.github
+        );
+        newTeamMembers.push(newEngineer);
+    } else if (answers.role === "Intern"){
+        const schoolAnswer = await inquirer.prompt([
+            {
+                type: "input",
+                message: "What school did you attend?",
+                name:"school",
+            }
+        ])
+        const newIntern = new Intern(
+            answers.name,
+            answers.id,
+            answers.email,
+            schoolAnswer.school
+        );
+        newTeamMembers.push(newIntern);
+    }
+
+
 
 }
