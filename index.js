@@ -12,7 +12,8 @@ const generateWebsite = require('./source/website');
 const newTeamMembers = [];
 
 const questions = async() => {
-    const answers = await inquirer.prompt([
+    const answers = await inquirer
+    .prompt([
         {
           type: "input",
           name: "name",
@@ -36,7 +37,8 @@ const questions = async() => {
         }
     ])
     if (answers.role === "Manager") {
-        const officeNumAnswer = await inquirer.prompt([
+        const officeNumAnswer = await inquirer
+        .prompt([
             { 
                 type: "input",
                 message: "What is your office number",
@@ -52,7 +54,8 @@ const questions = async() => {
         newTeamMembers.push(newManager);
     
     } else if (answers.role === "Engineer"){
-        const githubAnswer = await inquirer.prompt([
+        const githubAnswer = await inquirer
+        .prompt([
           {
             type: "input",
             message: "What is your Github Username?",
@@ -67,7 +70,8 @@ const questions = async() => {
         );
         newTeamMembers.push(newEngineer);
     } else if (answers.role === "Intern"){
-        const schoolAnswer = await inquirer.prompt([
+        const schoolAnswer = await inquirer
+        .prompt([
             {
                 type: "input",
                 message: "What school did you attend?",
@@ -82,7 +86,33 @@ const questions = async() => {
         );
         newTeamMembers.push(newIntern);
     }
+};
 
+async function promptQuestions(){
+    await questions()
 
+    const addMemberAnswers = await inquirer
+    .prompt([
+        {
+            name: "addMember",
+            type: "list", 
+            choices: ["Add a new member", "Create team"], 
+            message: "what would you like to do next?"
+        }
+    ])
 
+    if (addMemberAnswers.addMember === "Add a new member"){
+        return promptQuestions()
+    }
+    return createTeam();
+}
+
+promptQuestions(); 
+
+function createTeam(){
+    fs.writeFileSync(
+    "./output/index.html",
+    generateWebsite(newTeamMembers),
+    "utf-8"
+    );
 }
