@@ -111,7 +111,7 @@ promptQuestions();
 
 function createTeam(){
     fs.writeFileSync(
-    "./output/index.html",
+    "./website/index.html",
     generateWebsite(newTeamMembers),
     "utf-8"
     );
