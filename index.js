@@ -45,13 +45,13 @@ const questions = async() => {
                 name: "officeNumber",
             },
         ])
-        const newManager = new Manager (
+        const manager = new Manager (
             answers.name,
             answers.id,
             answers.email,
             officeNumAnswer.officeNumber
         );
-        newTeamMembers.push(newManager);
+        newTeamMembers.push(manager);
     
     } else if (answers.role === "Engineer"){
         const githubAnswer = await inquirer
@@ -62,13 +62,13 @@ const questions = async() => {
             name: "github",
           }  
         ])
-        const newEngineer = new Engineer(
+        const engineer = new Engineer(
             answers.name,
             answers.id,
             answers.email,
             githubAnswer.github
         );
-        newTeamMembers.push(newEngineer);
+        newTeamMembers.push(engineer);
     } else if (answers.role === "Intern"){
         const schoolAnswer = await inquirer
         .prompt([
@@ -78,13 +78,13 @@ const questions = async() => {
                 name:"school",
             }
         ])
-        const newIntern = new Intern(
+        const intern = new Intern(
             answers.name,
             answers.id,
             answers.email,
             schoolAnswer.school
         );
-        newTeamMembers.push(newIntern);
+        newTeamMembers.push(intern);
     }
 };
 
@@ -110,6 +110,9 @@ async function promptQuestions(){
 promptQuestions(); 
 
 function createTeam(){
+
+    console.table(newTeamMembers)
+
     fs.writeFileSync(
     "./website/index.html",
     generateWebsite(newTeamMembers),

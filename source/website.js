@@ -1,5 +1,6 @@
 const generateWebsite = (team) => {
     const createManager = (manager) => {
+        console.table(manager);
         return `     
         <div class="titleCard1">
         <div class="cardHead">
@@ -25,7 +26,7 @@ const generateWebsite = (team) => {
         <div class="midBoxB">
             <div class="row1B">ID:${engineer.getId()}></div>
             <div class="row2B">Email: ${engineer.getEmail()}></div>
-            <div class="row3B">Office Number: ${engineer.getOfficeNumber()}</div>
+            <div class="row3B">Office Number: ${engineer.getGithub()}</div>
         </div>
     </div>
         `;
@@ -40,7 +41,7 @@ const generateWebsite = (team) => {
         <div class="midBoxC">
             <div class="row1C">ID:${intern.getId()}></div>
             <div class="row2C">Email: ${intern.getEmail()}></div>
-            <div class="row3C">Office Number: ${intern.getOfficeNumber()}</div>
+            <div class="row3C">Office Number: ${intern.getCollege()}</div>
         </div>
     </div>
         `;
@@ -56,12 +57,12 @@ const generateWebsite = (team) => {
     html.push(
         team
             .filter((employee) => employee.getRole() === "Engineer")
-            .map((engineer) => createManager(engineer))
+            .map((engineer) => createEngineer(engineer))
     );
     html.push(
         team
             .filter((employee) => employee.getRole() === "Intern")
-            .map((intern) => createManager(intern))
+            .map((intern) => createIntern(intern))
     );
 
     return html.join("");
