@@ -8,8 +8,8 @@ const generateWebsite = (team) => {
             <div class="Manager">Manager</div>
         </div>
         <div class="midBox">
-            <div class="row1">ID:${manager.getId()}></div>
-            <div class="row2">Email: ${manager.getEmail()}></div>
+            <div class="row1">ID:${manager.getId()}</div>
+            <div class="row2">Email: ${manager.getEmail()}</div>
             <div class="row3">Office Number: ${manager.getOfficeNumber()}</div>
         </div>
     </div>
@@ -24,8 +24,8 @@ const generateWebsite = (team) => {
             <div class="Manager">Manager</div>
         </div>
         <div class="midBoxB">
-            <div class="row1B">ID:${engineer.getId()}></div>
-            <div class="row2B">Email: ${engineer.getEmail()}></div>
+            <div class="row1B">ID:${engineer.getId()}</div>
+            <div class="row2B">Email: ${engineer.getEmail()}</div>
             <div class="row3B">Office Number: ${engineer.getGithub()}</div>
         </div>
     </div>
@@ -39,8 +39,8 @@ const generateWebsite = (team) => {
             <div class="Manager">Manager</div>
         </div>
         <div class="midBoxC">
-            <div class="row1C">ID:${intern.getId()}></div>
-            <div class="row2C">Email: ${intern.getEmail()}></div>
+            <div class="row1C">ID:${intern.getId()}</div>
+            <div class="row2C">Email: ${intern.getEmail()}</div>
             <div class="row3C">Office Number: ${intern.getCollege()}</div>
         </div>
     </div>
@@ -86,9 +86,7 @@ module.exports = (team) => {
     </header>
     <main>
     <div class="titleCard1">
-    <div class="cardHead">
-      ${generateWebsite(team)}
-    </div>
+    ${generateWebsite(team)}</div>
 </body>
 </html>
 `;

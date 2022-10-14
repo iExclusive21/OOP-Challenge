@@ -114,7 +114,7 @@ function createTeam(){
     // console.table(newTeamMembers)
 
     fs.writeFileSync(
-    "./website/index.html",
+    "./output/index.html",
     generateWebsite(newTeamMembers),
     "utf-8"
     );
