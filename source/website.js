@@ -1,6 +1,6 @@
 const generateWebsite = (team) => {
     const createManager = (manager) => {
-        console.table(manager);
+        // console.table(manager);
         return `     
         <div class="titleCard1">
         <div class="cardHead">

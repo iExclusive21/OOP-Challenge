@@ -111,7 +111,7 @@ promptQuestions();
 
 function createTeam(){
 
-    console.table(newTeamMembers)
+    // console.table(newTeamMembers)
 
     fs.writeFileSync(
     "./website/index.html",
