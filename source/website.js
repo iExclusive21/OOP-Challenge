@@ -46,6 +46,24 @@ const generateWebsite = (team) => {
         `;
     }
 
+    const html= []; 
+
+    html.push(
+        team
+            .filter((employee) => employee.getRole() === "Manager")
+            .map((manager) => createManager(manager))
+    );
+    html.push(
+        team
+            .filter((employee) => employee.getRole() === "Manager")
+            .map((manager) => createManager(manager))
+    );
+    html.push(
+        team
+            .filter((employee) => employee.getRole() === "Manager")
+            .map((manager) => createManager(manager))
+    );
+
 
 
 }
