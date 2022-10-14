@@ -21,7 +21,7 @@ const generateWebsite = (team) => {
         <div class="titleCard1B">
         <div class="cardHeadB">
             <h2>${engineer.getName()}</h2>
-            <div class="Manager">Manager</div>
+            <div class="Manager">Engineer</div>
         </div>
         <div class="midBoxB">
             <div class="row1B">ID:${engineer.getId()}</div>
@@ -36,7 +36,7 @@ const generateWebsite = (team) => {
         <div class="titleCard1C">
         <div class="cardHeadC">
             <h2>${intern.getName()}</h2>
-            <div class="Manager">Manager</div>
+            <div class="Manager">Intern</div>
         </div>
         <div class="midBoxC">
             <div class="row1C">ID:${intern.getId()}</div>

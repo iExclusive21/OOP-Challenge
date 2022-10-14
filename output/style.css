@@ -13,6 +13,7 @@ h1{
 
 main{
     display: flex;
+    /* flex-direction: row */
     justify-content: center;
     padding-top: 10%;
 }
@@ -26,8 +27,8 @@ main{
     border: 2px rgb(82, 82, 82) solid;
 }
 .cardHead{
-    border: 2px rgb(84, 84, 84) solid;
-    background-color: rgb(223, 223, 223);
+    /* border: 2px rgb(84, 84, 84) solid; */
+    background-color: rgb(244, 180, 180);
     height: 30%;
     width: 100%;
     display: flex;
@@ -77,8 +78,8 @@ main{
     align-items: center;
 }
 .cardHeadB{
-    border: 2px rgb(84, 84, 84) solid;
-    background-color: rgb(223, 223, 223);
+    /* border: 2px rgb(84, 84, 84) solid; */
+    background-color: rgb(244, 180, 180);
     height: 30%;
     width: 100%;
     display: flex;
@@ -127,8 +128,8 @@ main{
     align-items: center;
 }
 .cardHeadC{
-    border: 2px rgb(84, 84, 84) solid;
-    background-color: rgb(223, 223, 223);
+    /* border: 2px rgb(84, 84, 84) solid; */
+    background-color: rgb(244, 180, 180);
     height: 30%;
     width: 100%;
     display: flex;
